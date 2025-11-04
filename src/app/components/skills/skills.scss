@@ -1,0 +1,163 @@
+/* Estilos para la sección de habilidades */
+.habilidades {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Elementos decorativos */
+.puntos1-habilidades,
+.puntos2-habilidades {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
+  width: 150px;
+  height: auto;
+}
+
+.puntos1-habilidades {
+  top: 10%;
+  left: 5%;
+}
+
+.puntos2-habilidades {
+  bottom: 10%;
+  right: 5%;
+}
+
+/* Contenedor principal de tarjetas - Grid 6x6 perfecto */
+.cards_container--habilidades {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tarjetas individuales de habilidades */
+.cards--habilidades {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  position: relative;
+  min-height: 140px;
+}
+
+.cards--habilidades:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary-color);
+}
+
+/* Iconos de habilidades */
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.cards--habilidades:hover .skill-icon {
+  transform: scale(1.1);
+}
+
+.cards--habilidades p {
+  margin: 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+/* Mantenemos los estilos existentes para habilidades blandas */
+.soft-skill-item {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.soft-skill-item:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .cards_container--habilidades {
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cards_container--habilidades {
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 992px) {
+  .cards_container--habilidades {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards_container--habilidades {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 500px;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cards--habilidades {
+    padding: 1rem 0.5rem;
+    min-height: 120px;
+  }
+
+  .cards--habilidades p {
+    font-size: 0.9rem;
+  }
+
+  .puntos1-habilidades,
+  .puntos2-habilidades {
+    width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .cards_container--habilidades {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cards--habilidades {
+    min-height: 100px;
+    padding: 0.75rem 0.5rem;
+  }
+
+  .cards--habilidades p {
+    font-size: 0.8rem;
+  }
+}
