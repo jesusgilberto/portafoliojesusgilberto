@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from "./components/header/header";
 import { AboutComponent } from "./components/about/about";
+import { SkillsComponent } from './components/skills/skills';
 import { FooterComponent } from "./components/footer/footer";
 import { ExperienceComponent } from "./components/experience/experience";
 import { HeroComponent } from "./components/hero/hero";
@@ -11,6 +12,7 @@ import { HeroComponent } from "./components/hero/hero";
   imports: [
     HeaderComponent,
     AboutComponent,
+    SkillsComponent,
     FooterComponent,
     ExperienceComponent,
     HeroComponent
