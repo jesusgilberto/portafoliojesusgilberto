@@ -1,0 +1,120 @@
+<section id="contact" class="section-padding bg-dark text-white">
+  <div class="container">
+    <h2 class="section-title text-center mb-5 text-white">Contacto</h2>
+
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+
+        <!-- Sección Horizontal: Información de Contacto + Formulario -->
+        <div class="row align-items-start">
+
+          <!-- Columna 1: Información de Contacto -->
+          <div class="col-md-6">
+            <div class="contact-info">
+              <div class="contact-item mb-4 d-flex align-items-center">
+                <i class="fas fa-phone fa-lg text-warning me-3"></i>
+                <div>
+                  <h5 class="mb-1">Teléfono</h5>
+                  <p class="mb-0">+52 669 222 9506</p>
+                </div>
+              </div>
+
+              <div class="contact-item mb-4 d-flex align-items-center">
+                <i class="fas fa-envelope fa-lg text-warning me-3"></i>
+                <div>
+                  <h5 class="mb-1">Email</h5>
+                  <p class="mb-0">gilbertoramirez89461@gmail.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item mb-4 d-flex align-items-center">
+                <i class="fas fa-map-marker-alt fa-lg text-warning me-3"></i>
+                <div>
+                  <h5 class="mb-1">Ubicación</h5>
+                  <p class="mb-0">Mazatlán, Sinaloa, México</p>
+                </div>
+              </div>
+
+              <!-- Botones de Acción Rápidos -->
+              <div class="quick-actions mt-4">
+                <button (click)="sendQuickEmail()" class="btn btn-warning btn-sm me-2 mb-2">
+                  <i class="fas fa-paper-plane me-1"></i>
+                  Email Rápido
+                </button>
+                <button (click)="makeCall()" class="btn btn-outline-light btn-sm mb-2">
+                  <i class="fas fa-phone me-1"></i>
+                  Llamar
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Columna 2: Formulario de Contacto -->
+          <div class="col-md-6">
+            <div class="contact-form">
+              <h4 class="text-center mb-4">Envíame un mensaje</h4>
+
+              <!-- Alertas -->
+              <div *ngIf="isSuccess" class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>¡Éxito!</strong> Mensaje enviado correctamente. Te contactaré pronto.
+                <button type="button" class="btn-close" (click)="isSuccess = false"></button>
+              </div>
+
+              <div *ngIf="isError" class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error:</strong> No se pudo enviar el mensaje. Usa el botón "Email Rápido".
+                <button type="button" class="btn-close" (click)="isError = false"></button>
+              </div>
+
+              <form (submit)="onSubmitContactForm($event)" #contactFormRef="ngForm">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    placeholder="Tu nombre"
+                    [(ngModel)]="contactFormData.name"
+                    name="name"
+                    required>
+                </div>
+                <div class="mb-3">
+                  <input
+                    type="email"
+                    class="form-control form-control-sm"
+                    placeholder="Tu email"
+                    [(ngModel)]="contactFormData.email"
+                    name="email"
+                    required>
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control form-control-sm"
+                    rows="4"
+                    placeholder="Tu mensaje"
+                    [(ngModel)]="contactFormData.message"
+                    name="message"
+                    required></textarea>
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-warning btn-lg w-100"
+                    [disabled]="isSending">
+                    <span *ngIf="!isSending">
+                      <i class="fas fa-paper-plane me-2"></i>
+                      Enviar Mensaje
+                    </span>
+                    <span *ngIf="isSending">
+                      <i class="fas fa-spinner fa-spin me-2"></i>
+                      Enviando...
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
