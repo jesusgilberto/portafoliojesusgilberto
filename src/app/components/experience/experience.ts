@@ -11,6 +11,13 @@ import { CommonModule } from '@angular/common';
 export class ExperienceComponent {
   experiences = [
     {
+      year: '2025',
+      company: 'GRUPO STI (ZAR DIGITAL MARKETING SA DE CV)',
+      position: 'Desarrollo Web (Admin panel)',
+      description: 'Participé en el desarrollo de una aplicación web para la administración de un sistema gestor de cambios, utilizando tecnologías como Angular, TypeScript y NestJS.',
+      technologies: ['Angular', 'TypeScript', 'NestJS']
+    },
+    {
       year: '2024',
       company: 'Universidad Politécnica de Sinaloa',
       position: 'Desarrollo Web - Aprende Fácil (Primaria)',
