@@ -60,7 +60,7 @@ export class ContactComponent {
 
   // Función para email rápido
   sendQuickEmail() {
-    window.location.href = 'mailto:gilbertoramirez89461@gmail.com?subject=Contacto desde portfolio&body=Hola Gilbert, me interesa contactarte...';
+    window.location.href = 'mailto:bandeja490@gmail.com?subject=Contacto desde portfolio&body=Hola, me interesa contactarte...';
   }
 
   // Función para llamar

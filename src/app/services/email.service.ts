@@ -26,7 +26,7 @@ export class EmailService {
         from_name: contactData.name,
         from_email: contactData.email,
         message: contactData.message,
-        to_email: 'gilbertoramirez89461@gmail.com',
+        to_email: 'bandeja490@gmail.com',
         reply_to: contactData.email
       };
 
