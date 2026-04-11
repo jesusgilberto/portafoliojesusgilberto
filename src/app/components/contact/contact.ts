@@ -65,7 +65,7 @@ export class ContactComponent {
 
   // Función para llamar
   makeCall() {
-    window.location.href = 'tel:+526692229506';
+    window.location.href = 'tel:+526691276032';
   }
 
   // Resetear formulario
