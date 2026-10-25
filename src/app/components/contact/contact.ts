@@ -60,8 +60,24 @@ export class ContactComponent {
 
   // Función para email rápido
   sendQuickEmail() {
-    window.location.href = 'mailto:bandeja490@gmail.com?subject=Contacto desde portfolio&body=Hola, me interesa contactarte...';
+  const to = 'bandeja490@gmail.com';
+  const subject = encodeURIComponent('Contacto desde portafolio');
+  const body = encodeURIComponent('Hola, me interesa contactarte...');
+
+  const esMovil = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+  if (esMovil) {
+    // En el celular sí suele haber app de correo
+    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+  } else {
+    // En computadora abrimos Gmail en una pestaña nueva
+    window.open(
+      `https://mail.google.com/mail/?view=cm&fs=1&to=${to}&su=${subject}&body=${body}`,
+      '_blank',
+      'noopener'
+    );
   }
+}
 
   // Función para llamar
   makeCall() {
